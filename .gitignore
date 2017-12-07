@@ -2,7 +2,12 @@
 ### Gradle template
 .gradle
 .idea
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
 *.iml
+*/*.iml
 platform-api/build/
 platform-dao/build/
 platform-entity/build/
