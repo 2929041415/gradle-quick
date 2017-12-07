@@ -2,6 +2,7 @@
 ### Gradle template
 .gradle
 .idea
+*.iml
 platform-api/build/
 platform-dao/build/
 platform-entity/build/
