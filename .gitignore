@@ -1,0 +1,31 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Gradle template
+.gradle
+.idea
+platform-api/build/
+platform-dao/build/
+platform-entity/build/
+platform-mvc/build/
+platform-service/build/
+platform-utils/build/
+
+platform-api/out/
+platform-dao/out/
+platform-entity/out/
+platform-mvc/out/
+platform-service/out/
+platform-utils/out/
+
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+

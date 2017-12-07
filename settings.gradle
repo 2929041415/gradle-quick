@@ -1,0 +1,8 @@
+rootProject.name = 'gradle-quickstart'
+include 'platform-dao'
+include 'platform-service'
+include 'platform-utils'
+include 'platform-entity'
+include 'platform-api'
+include 'platform-mvc'
+

@@ -1,0 +1,112 @@
+subprojects {
+    version '1.0'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+
+    ext {
+        springVersion = '4.3.13.RELEASE'
+        jwtversion = '3.2.0'
+        nettyversion = '4.1.15.Final'
+        fastjsonversion = '1.2.7'
+        aspectversion = '1.7.4'
+        cglibversion = '3.1'
+        mybatisversion = '3.4.5'
+        mybatisspring = '1.3.0'
+        mybatispagehelper = '5.1.0'
+        druidversion = '1.1.5'
+        httpclientversion = '4.5.2'
+        commonslang3version = '3.3.2'
+        commonsioversion = '2.4'
+        commonscodecversion = '1.9'
+        commonsfileuploadversion = '1.3.1'
+        commonsbeanutilsversion = '1.9.1'
+        slf4jversion = '1.7.7'
+        jdbcversion = '11.2.0.3'
+        mysqljdbcversion = '5.1.40'
+        sitemeshversion = '2.4.2'
+        jedisversion = '2.9.0'
+        xstreamversion = '1.4.7'
+        poiversion = '3.9'
+        springldapversion = '1.3.1.RELEASE'
+        joddversion = '3.8.6'
+    }
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+    }
+
+    jar {
+        manifest {
+            attributes("Implementation-Title": "Gradle")
+        }
+    }
+
+    dependencies {
+        // 通用依赖
+        compile(
+                "org.springframework:spring-webmvc:$springVersion",
+                "org.springframework:spring-context:$springVersion",
+                "org.springframework:spring-context-support:$springVersion",
+                "org.springframework:spring-orm:$springVersion",
+                "org.springframework:spring-tx:$springVersion",
+                "org.springframework:spring-beans:$springVersion",
+                "org.springframework:spring-aop:$springVersion",
+                "org.springframework:spring-orm:$springVersion",
+                "org.springframework:spring-jdbc:$springVersion",
+                "org.springframework:spring-web:$springVersion",
+                "org.springframework:spring-oxm:$springVersion",
+
+                "com.auth0:java-jwt:$jwtversion",
+                "io.jsonwebtoken:jjwt:0.7.0",
+                "io.netty:netty-all:$nettyversion",
+                "com.alibaba:fastjson:$fastjsonversion",
+                "org.aspectj:aspectjrt:$aspectversion",
+                "org.aspectj:aspectjweaver:$aspectversion",
+                "cglib:cglib:$cglibversion",
+                "org.mybatis:mybatis:$mybatisversion",
+                "org.mybatis:mybatis-spring:$mybatisspring",
+                "com.github.pagehelper:pagehelper:$mybatispagehelper",
+                "com.alibaba:druid:$druidversion",
+                "com.oracle:ojdbc6:$jdbcversion",
+                "mysql:mysql-connector-java:$mysqljdbcversion",
+                "opensymphony:sitemesh:$sitemeshversion",
+                "taglibs:standard:1.1.2",
+                "javax.servlet:jstl:1.2",
+                "javax.servlet:javax.servlet-api:3.0.1",
+                "javax.servlet.jsp:jsp-api:2.1",
+                "redis.clients:jedis:$jedisversion",
+                "org.slf4j:slf4j-api:$slf4jversion",
+                "org.slf4j:slf4j-log4j12:$slf4jversion",
+                "org.slf4j:jcl-over-slf4j:$slf4jversion",
+                "org.slf4j:jul-to-slf4j:$slf4jversion",
+                "org.apache.commons:commons-lang3:$commonslang3version",
+                "commons-io:commons-io:$commonsioversion",
+                "commons-codec:commons-codec:$commonscodecversion",
+                "commons-fileupload:commons-fileupload:$commonsfileuploadversion",
+                "commons-beanutils:commons-beanutils:$commonsbeanutilsversion",
+                "com.thoughtworks.xstream:xstream:$xstreamversion",
+                "org.apache.httpcomponents:httpclient:$httpclientversion",
+                "org.apache.poi:poi:$poiversion",
+                "org.apache.poi:poi-ooxml:$poiversion",
+                "org.apache.poi:poi-ooxml-schemas:$poiversion",
+                "org.springframework.ldap:spring-ldap:$springldapversion",
+                "org.springframework.ldap:spring-ldap-core:$springldapversion",
+                "org.jodd:jodd-mail:$joddversion"
+        )
+
+        // 测试依赖
+        testCompile(
+                "org.springframework:spring-test:$springVersion",
+                "junit:junit:4.12"
+        )
+    }
+}
+
