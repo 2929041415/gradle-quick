@@ -52,7 +52,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto sysUserLogin(String account, String password, HttpServletRequest request) {
+    public BaseResultDto sysUserLogin(String account, String password,String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(account) && StringUtils.isNotBlank(password)) {
             PlatFormUser platFormUser = platFormSysUserLoginDao.getUserByAccount(account, CommonEnum.USER_TYPE.系统用户.getValue());
@@ -91,7 +91,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
+
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), accountid, "", "用户登录", handleip, "用户登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface PlatFormSysUserLoginService {
 
-    BaseResultDto sysUserLogin(String account, String password, HttpServletRequest request);
+    BaseResultDto sysUserLogin(String account, String password, String handleip);
 
     BaseResultDto verifyUserToken(String token, String account);
 

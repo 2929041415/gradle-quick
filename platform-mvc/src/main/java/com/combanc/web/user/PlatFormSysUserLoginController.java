@@ -2,6 +2,7 @@ package com.combanc.web.user;
 
 import com.combanc.entity.common.BaseResultDto;
 import com.combanc.service.user.PlatFormSysUserLoginService;
+import com.combanc.utils.common.CommonUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,8 @@ public class PlatFormSysUserLoginController {
 
     @RequestMapping(method = RequestMethod.POST,value = "/sysUserLogin", produces = "application/json;charset=utf-8")
     public BaseResultDto sysUserLogin(String account, String password, HttpServletRequest request) {
-        return platFormSysUserLoginService.sysUserLogin(account, password,request);
+        String handleip = CommonUtils.getRemoteAddress(request);
+        return platFormSysUserLoginService.sysUserLogin(account, password,handleip);
     }
 
 
