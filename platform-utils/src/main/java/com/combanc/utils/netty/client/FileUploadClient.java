@@ -1,6 +1,6 @@
 package com.combanc.utils.netty.client;
 
-import com.tzplatform.utils.netty.FileUploadFile;
+import com.combanc.utils.netty.FileUploadFile;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
