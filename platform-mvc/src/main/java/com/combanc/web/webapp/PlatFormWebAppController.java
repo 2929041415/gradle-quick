@@ -5,7 +5,7 @@ import com.combanc.entity.common.CommonEnum;
 import com.combanc.entity.system.PlatFormDict;
 import com.combanc.entity.webapp.PlatFormAppComment;
 import com.combanc.entity.webapp.PlatFormWebApp;
-import com.combanc.service.common.RedisClusterHelper;
+import com.combanc.service.common.RedisClusterHelperApi;
 import com.combanc.service.system.PlatFormDictService;
 import com.combanc.service.tokenIpfilter.AccessTokenIp;
 import com.combanc.service.tokenfilter.AccessToken;
@@ -30,7 +30,7 @@ public class PlatFormWebAppController {
     private PlatFormDictService platFormDictService;
 
     @Resource
-    private RedisClusterHelper redisClusterHelper;
+    private RedisClusterHelperApi redisClusterHelper;
 
     /**
      * 添加应用
