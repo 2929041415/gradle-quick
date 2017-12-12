@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @author leijie
  */
 @Service
-public class SendEmailHelper {
+public class SendEmailHelper implements ISendEmailHelper {
 
     @Resource
     private SendEmailThread sendEmailThread;
@@ -39,6 +39,7 @@ public class SendEmailHelper {
     // 实例化线程池（线程共享）
     private static ThreadPoolExecutor threadPool = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, emailQueue, new ThreadPoolExecutor.AbortPolicy());
 
+    @Override
     public void sendEmail(String recieveEmailUser, String subject, String content, String htmlContent) {
         threadPool.execute(sendEmailThread.new EmailThread(recieveEmailUser, subject, content, htmlContent));
     }

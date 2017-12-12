@@ -9,7 +9,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring-context.xml</param-value>
+        <param-value>classpath:spring/spring-context.xml,classpath:dubbo/dubbo-provider.xml</param-value>
     </context-param>
     <context-param>
         <param-name>spring.profiles.default</param-name>

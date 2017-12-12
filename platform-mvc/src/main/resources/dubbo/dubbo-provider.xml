@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://code.alibabatech.com/schema/dubbo
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="combanc-platform-service" />
+
+
+    <dubbo:registry address="zookeeper://10.5.1.123:2181"/>
+
+
+    <dubbo:protocol name="dubbo" port="20880" />
+
+
+    <!-- 应用app暴露接口地址 -->
+    <dubbo:service interface="com.combanc.service.webapp.PlatFormWebAppService" ref="platFormWebAppService"/>
+
+    <!-- 应用app访问统计 -->
+    <dubbo:service interface="com.combanc.service.webapp.PlatFormAppAccessCountService" ref="platFormAppAccessCountService"/>
+
+    <!--移动用户-->
+    <dubbo:service interface="com.combanc.service.user.PlatFormMobileService" ref="platFormMobileService"/>
+
+    <!--系统用户登录-->
+    <dubbo:service interface="com.combanc.service.user.PlatFormSysUserLoginService" ref="platFormSysUserLoginService"/>
+    <dubbo:service interface="com.combanc.service.user.PlatFormUserService" ref="platFormUserService"/>
+
+    <!--厂商注册-->
+    <dubbo:service interface="com.combanc.service.user.PlatFormUserRegisterService" ref="platFormUserRegisterService"/>
+    <dubbo:service interface="com.combanc.service.user.PlatFormWebUserLoginService" ref="platFormWebUserLoginService"/>
+
+    <!--系统模块-->
+    <dubbo:service interface="com.combanc.service.system.PlatFormApiManagerService" ref="platFormApiManagerService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormApiService" ref="platFormApiService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormDictService" ref="platFormDictService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormDownloadService" ref="platFormDownloadService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormLogService" ref="platFormLogService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormMenuService" ref="platFormMenuService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormNoticeService" ref="platFormNoticeService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormRoleService" ref="platFormRoleService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormSendSmsService" ref="platFormSendSmsService"/>
+    <dubbo:service interface="com.combanc.service.system.PlatFormTechSupportService" ref="platFormTechSupportService"/>
+
+    <!--发送邮件-->
+    <dubbo:service interface="com.combanc.service.sendmail.ISendEmailHelper" ref="sendEmailHelper"/>
+
+    <!--学校数据-->
+    <dubbo:service interface="com.combanc.service.school.PlatFormSchoolService" ref="platFormSchoolService"/>
+
+    <!--移动平台-->
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatformCampusSceneryService" ref="platformCampusSceneryService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatFormFeedBackService" ref="platFormFeedBackService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatformLostFoundService" ref="platformLostFoundService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatformNoticeService" ref="platformNoticeService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatformPosterService" ref="platformPosterService"/>
+
+
+    <!--统计-->
+    <dubbo:service interface="com.combanc.service.home.SystemHomeService" ref="systemHomeService"/>
+
+    <!--文件服务-->
+    <dubbo:service interface="com.combanc.service.helper.SambaService" ref="sambaService"/>
+
+    <!--缓存服务-->
+    <dubbo:service interface="com.combanc.service.common.RedisClusterHelperApi" ref="redisClusterHelper"/>
+
+    <!--栏目-->
+    <dubbo:service interface="com.combanc.service.channel.PlatFormChannelContentService" ref="platFormChannelContentService"/>
+    <dubbo:service interface="com.combanc.service.channel.PlatFormChannelService" ref="platFormChannelService"/>
+
+
+</beans>
