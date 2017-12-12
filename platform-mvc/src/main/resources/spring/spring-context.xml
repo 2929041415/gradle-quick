@@ -141,6 +141,10 @@
         <constructor-arg ref="ldapContextSource"/>
     </bean>
 
+    <!--集成redis配置文件 -->
+
+    <import resource="classpath:redis/redis-cluster.xml"/>
+
 
     <!-- 开发环境配置文件 -->
     <beans profile="development">
