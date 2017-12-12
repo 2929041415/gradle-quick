@@ -53,6 +53,7 @@
     <dubbo:reference interface="com.combanc.service.mobileplatform.PlatformLostFoundService" id="platformLostFoundService"/>
     <dubbo:reference interface="com.combanc.service.mobileplatform.PlatformNoticeService" id="platformNoticeService"/>
     <dubbo:reference interface="com.combanc.service.mobileplatform.PlatformPosterService" id="platformPosterService"/>
+    <dubbo:reference interface="com.combanc.service.mobileplatform.CommonService" id="commonService"/>
 
 
     <!--统计-->

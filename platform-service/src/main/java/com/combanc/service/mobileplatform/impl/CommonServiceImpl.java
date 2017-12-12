@@ -2,13 +2,14 @@ package com.combanc.service.mobileplatform.impl;
 
 import com.combanc.dao.mobileplatform.PlatFormCommonDao;
 import com.combanc.entity.common.CommonEnum;
+import com.combanc.service.mobileplatform.CommonService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service(value = "commonService")
-public class CommonServiceImpl {
+public class CommonServiceImpl implements CommonService {
     @Resource
     private PlatFormCommonDao platFormCommonDao;
     @Value("${checked.image.path}")
@@ -20,6 +21,7 @@ public class CommonServiceImpl {
      * @param accountId
      * @return
      */
+    @Override
     public String checkUserRole(String accountId, String requestSource) {
         String userRole = platFormCommonDao.queryUserRole(accountId, requestSource);
         //校管理角色
@@ -42,10 +44,13 @@ public class CommonServiceImpl {
      * @param accountId
      * @return
      */
+    @Override
     public String getSchoolId(String accountId) {
         return platFormCommonDao.userSchoolId(accountId);
     }
 
+
+    @Override
     public String checkImage() {
         return imageCheckPath;
     }

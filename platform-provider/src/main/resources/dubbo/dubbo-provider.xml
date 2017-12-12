@@ -44,6 +44,7 @@
     <dubbo:service interface="com.combanc.service.system.PlatFormSendSmsService" ref="platFormSendSmsService"/>
     <dubbo:service interface="com.combanc.service.system.PlatFormTechSupportService" ref="platFormTechSupportService"/>
 
+
     <!--发送邮件-->
     <dubbo:service interface="com.combanc.service.sendmail.ISendEmailHelper" ref="sendEmailHelper"/>
 
@@ -56,6 +57,7 @@
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformLostFoundService" ref="platformLostFoundService"/>
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformNoticeService" ref="platformNoticeService"/>
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformPosterService" ref="platformPosterService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.CommonService" ref="commonService"/>
 
 
     <!--统计-->
