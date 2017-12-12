@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 @RequestMapping(value = "/platformUserRegister")
 public class PlatFromUserRegisterController {
     @Resource
-    private PlatFormUserRegisterService platFromUserRegisterService;
+    private PlatFormUserRegisterService platFormUserRegisterService;
 
 
     /**
@@ -33,7 +33,7 @@ public class PlatFromUserRegisterController {
                                          @RequestParam(value = "leaderidcardfile", required = false) CommonsMultipartFile leaderidcardfile,
                                          @RequestParam(value = "companycardfile", required = false) CommonsMultipartFile companycardfile) {
 
-        return platFromUserRegisterService.addUser(platFormUser, idcardfile, leaderidcardfile, companycardfile);
+        return platFormUserRegisterService.addUser(platFormUser, idcardfile, leaderidcardfile, companycardfile);
     }
 
     /**
@@ -44,7 +44,7 @@ public class PlatFromUserRegisterController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/isRegisterUser", produces = "application/json;charset=utf-8")
     public BaseResultDto isRegisterUser(@RequestParam(value = "account", required = false) String account, @RequestParam(value = "email", required = false) String email) {
-        return platFromUserRegisterService.isRegisterUser(account, email);
+        return platFormUserRegisterService.isRegisterUser(account, email);
     }
 
     /**
@@ -55,7 +55,7 @@ public class PlatFromUserRegisterController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/registerUserList", produces = "application/json;charset=utf-8")
     public BaseResultDto registerUserList(PlatFormUser platFormUser) {
-        return platFromUserRegisterService.listUser(platFormUser);
+        return platFormUserRegisterService.listUser(platFormUser);
 
     }
 
@@ -67,7 +67,7 @@ public class PlatFromUserRegisterController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/registerDetailUser", produces = "application/json;charset=utf-8")
     public BaseResultDto registerDetailUser(PlatFormUser platFormUser) {
-        return platFromUserRegisterService.detailUser(platFormUser);
+        return platFormUserRegisterService.detailUser(platFormUser);
 
     }
 
@@ -82,7 +82,7 @@ public class PlatFromUserRegisterController {
                                           @RequestParam(value = "idcardfile", required = false) CommonsMultipartFile idcardfile,
                                           @RequestParam(value = "leaderidcardfile", required = false) CommonsMultipartFile leaderidcardfile,
                                           @RequestParam(value = "companycardfile", required = false) CommonsMultipartFile companycardfile) {
-        return platFromUserRegisterService.editUser(platFormUser, idcardfile, leaderidcardfile, companycardfile);
+        return platFormUserRegisterService.editUser(platFormUser, idcardfile, leaderidcardfile, companycardfile);
     }
 
 }

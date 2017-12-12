@@ -31,7 +31,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-@Service(value = "platFromUserRegisterService")
+@Service(value = "platFormUserRegisterService")
 public class PlatFormUserRegisterServiceImpl implements PlatFormUserRegisterService {
 
 
