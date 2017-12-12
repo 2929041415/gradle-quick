@@ -13,7 +13,7 @@ task jarWithoutResources(type: Jar) {
 }
 
 war{
-    baseName ="platform"
+    baseName ="tzmanage"
     version = ""
     dependsOn jarWithoutResources
     from("$projectDir/src/main/resources") {

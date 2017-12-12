@@ -44,7 +44,7 @@ public class PlatFormMobileThirdController {
     @ThirdMobileAccessToken
     @RequestMapping(value = "/webAppTypeList", produces = "application/json;charset=utf-8")
     public BaseResultDto webAppTypeList(PlatFormDict platFormDict, HttpServletResponse response) {
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        //response.setHeader("Access-Control-Allow-Origin", "*");
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormDict.setType("webappkind");
         List<PlatFormDict> dictvalueList = (List<PlatFormDict>) platFormDictService.dictValueList(platFormDict).getData();
@@ -77,7 +77,7 @@ public class PlatFormMobileThirdController {
                                        HttpServletResponse response, String access_token,
                                        @RequestParam(value = "myApp", required = false) String myApp,
                                        @RequestParam(value = "ids", required = false) String ids) {
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        //response.setHeader("Access-Control-Allow-Origin", "*");
         String user = JwtUtils.veriftToken(access_token);
         platFormWebApp.setPageNum(PageDto.getPageNum(Integer.parseInt(first), Integer.parseInt(last)));
 
@@ -109,7 +109,7 @@ public class PlatFormMobileThirdController {
     @ThirdMobileAccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/appUseCollect", produces = "application/json;charset=utf-8")
     public BaseResultDto appUseCollect(String appId, String access_token, String type, String requestSource, HttpServletRequest request, HttpServletResponse response) {
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        //response.setHeader("Access-Control-Allow-Origin", "*");
         String user = JwtUtils.veriftToken(access_token);
 
         String sysOs = "";
@@ -130,7 +130,7 @@ public class PlatFormMobileThirdController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/deleteAppCollect", produces = "application/json;charset=utf-8")
     public BaseResultDto deleteAppCollect(String ids, String access_token, String requestSource, HttpServletRequest request, HttpServletResponse response) {
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        //response.setHeader("Access-Control-Allow-Origin", "*");
         String user = JwtUtils.veriftToken(access_token);
         String sysOs = "";
         if ("2".equals(requestSource)) {
