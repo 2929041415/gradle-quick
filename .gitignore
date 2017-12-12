@@ -8,19 +8,12 @@
 */.idea/
 *.iml
 */*.iml
-platform-api/build/
-platform-dao/build/
-platform-entity/build/
-platform-mvc/build/
-platform-service/build/
-platform-utils/build/
 
-platform-api/out/
-platform-dao/out/
-platform-entity/out/
-platform-mvc/out/
-platform-service/out/
-platform-utils/out/
+
+**/out/
+**/build/
+
+
 
 
 # Ignore Gradle GUI config
