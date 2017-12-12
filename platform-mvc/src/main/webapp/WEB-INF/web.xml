@@ -11,6 +11,10 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:dubbo/dubbo-consumer.xml</param-value>
     </context-param>
+    <context-param>
+        <param-name>spring.profiles.default</param-name>
+        <param-value>development</param-value>
+    </context-param>
     <listener>
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
