@@ -1,0 +1,54 @@
+body{
+    font-family: "微软雅黑";
+}
+.card-reset{
+    margin: 0;
+    padding: 8px;
+    background-color: #EEEEEE;
+}
+.card-reset img{
+    border-radius: 3px;
+}
+.tabs-striped.tabs-color-calm .tab-item-reset {
+    color: #999;
+    opacity: 1;
+}
+.tabs-reset{
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 100%;
+    height: 60px!important;
+    line-height: 60px!important;
+    border-color: #efefef!important;
+    /*-webkit-justify-content: initial;*/
+    /*justify-content: initial;*/
+}
+.tab-item-reset{
+    /*-webkit-box-flex: initial;*/
+    /*-webkit-flex: initial;*/
+    /*-moz-box-flex: initial;*/
+    /*-moz-flex: initial;*/
+    /*-ms-flex: initial;*/
+    /*flex:initial;*/
+    height: 58px!important;
+    display: inline-block;
+    padding: 0 10px;
+    max-width: none;
+    overflow: inherit;
+}
+.tab-item-reset.active, .tab-item-reset.activated{
+    margin-top: 1px!important;
+    border-width: 0 0 3px!important;
+    color:#00aaff!important;
+    border-color: #00aaff!important;
+    /*height: auto;*/
+}
+.tabs-swipe{
+    /*margin-left: -2000px;*/
+    /*margin-right: -2000px;*/
+}
+.tabs-swipe>.tabs{
+    /*padding-left: 2000px;*/
+    /*padding-right: 2000px;*/
+}

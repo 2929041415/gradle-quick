@@ -1,0 +1,335 @@
+{
+  "result": "1",
+  "msg": "查询成功",
+  "pageNo": 1,
+  "pageSize": 2,
+  "count": 1,
+  "first": 0,
+  "last": 2,
+  "data": [
+    {
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    },{
+      "operatingSystem": "",
+      "updatetime": "2016-08-18",
+      "createtime": "2016-08-18",
+      "status": "0",
+      "appLogo": "http://localhost:8080/openplatform/a/upimage/displayimg?imgid=e7ce7bd20571477181160209aa2bcd36.jpg&type=2",
+      "typeName": "管理类",
+      "typeid":"09a0635c314c4a162b2c9ac0fa",
+      "appName": "测试应用",
+      "id": "e8401db2c7a2432c9885f7a8770dfc67",
+      "added":"0",
+      "sort":"1",
+      "colour":"红色",
+      "appVersion": {
+        "appSize": "1M",
+        "versionId": "222",
+        "versionName": "2.0",
+        "versionNum": "更新版本"
+      }
+    }
+  ]
+}

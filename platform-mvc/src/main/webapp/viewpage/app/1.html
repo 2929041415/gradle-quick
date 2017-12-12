@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="description" content="通州教育云">
+    <meta name="keywords" content="通州教育云">
+    <title>通州教育云</title>
+
+    <link href='../lib/fonts/robotodraft/robotodraft.css' rel='stylesheet' type='text/css'>
+    <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+    <script>
+        function Person() {
+
+        }
+        var a = new Person;
+        debugger
+    </script>
+</head>
+<body ng-app="ionicApp" ng-controller="MyCtrl" class="background-places">
+
+<ion-view>
+    <ion-content class="" scroll='false'>
+        <!--<ion-scroll style="height:50%">-->
+            <!--<ion-list>-->
+                <!--<ion-item collection-repeat="list in _list">-->
+                    <!--<h2>Item</h2>-->
+                <!--</ion-item>-->
+            <!--</ion-list>-->
+            <!--<button class="button button-full button-outline button-positive" ng-if="noMoreContent">-->
+                <!--No more Content-->
+            <!--</button>-->
+            <!--<ion-infinite-scroll ng-if="canWeLoadMoreContent()" on-infinite="populateList()" distance="1%">-->
+            <!--</ion-infinite-scroll>-->
+        <!--</ion-scroll>-->
+
+        <hr>
+        <hr>
+
+        <ion-scroll style="height:50%">
+            <ion-list>
+                <ion-item collection-repeat="list2 in _list2">
+
+                    <h2>Item{{$index}}</h2>
+
+                </ion-item>
+            </ion-list>
+
+
+
+            <button class="button button-full button-outline button-positive" ng-if="noMoreContent2">
+                No More Content
+            </button>
+            <ion-infinite-scroll ng-if="canWeLoadMoreContent2()" on-infinite="populateList2()" distance="1%">
+            </ion-infinite-scroll>
+        </ion-scroll>
+
+    </ion-content>
+
+</ion-view>
+
+<script src="../lib/ionic/js/ionic.bundle.js"></script>
+<script>
+    angular.module('ionicApp', ['ionic'])
+
+            .controller('MyCtrl', function($scope) {
+
+
+
+
+
+
+                $scope._list = [];
+
+                $scope.populateList = function() {
+                    for (var i = 0; i <= 9; i++) {
+
+
+                        $scope._list.push({});
+                    }
+                    console.log($scope._list.length);
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                }
+
+                $scope.noMoreContent = false;
+
+                $scope.canWeLoadMoreContent = function() {
+                    if($scope._list.length > 15) {
+                        $scope.noMoreContent = true;
+
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+                $scope.populateList();
+
+
+
+
+
+                $scope._list2 = [];
+
+                $scope.populateList2 = function() {
+                    console.log(11111);
+                    for (var i = 0; i <= 9; i++) {
+
+
+
+                        $scope._list2.push({});
+
+                    }
+                    console.log($scope._list2.length);
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                }
+
+                $scope.noMoreContent2 = false;
+
+                $scope.canWeLoadMoreContent2 = function() {
+                    if($scope._list2.length > 35) {
+                        $scope.noMoreContent2 = true;
+
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+
+
+
+//                $scope.populateList2();
+
+
+
+
+            });
+</script>
+
+</body>
+</html>

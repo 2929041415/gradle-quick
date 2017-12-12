@@ -1,0 +1,93 @@
+.list__nav__button{
+    color: #000!important;
+    width:inherit!important;
+    max-width: inherit!important;
+}
+.list__input--search{
+    /*text-align: center;*/
+    /*background-color: #fff!important;*/
+    /*border-radius: 3px;*/
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+}
+.list__item-input{
+    /*padding-left: 0;*/
+    background-color: #fff!important;
+    border-radius: 6px!important;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.list__input--search__icon{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 56px;
+    height:22px;
+}
+.list__item{
+    border-top:0;
+    height: 102px;
+    border-width: 2px;
+    border-color: #efefef;
+}
+.list__item:last-child{
+    border-bottom: 1px solid #efefef!important;
+}
+.list__item--name{
+    display: table;
+    height: 100%;
+    /*position: absolute;*/
+    /*left: 72px;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*margin: auto!important;*/
+    /*height: 19px;*/
+}
+.list__item--name__content{
+    display: table-cell;
+    vertical-align: middle
+}
+.list__item-avatar{
+    padding-left: 80px;
+}
+.list__item-avatar > img{
+    top:23px!important;
+    max-width: 55px!important;
+    max-height: 55px!important;
+}
+.list__item-avatar > img:first-child{
+    border-radius:inherit;
+}
+.list__button{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    min-height: 25px!important;
+    line-height: 25px!important;
+    /*top: 16px!important;*/
+    font-size: 13px!important;
+    -webkit-transition: none !important;
+    transition: none !important;
+    top:0!important;
+    bottom: 0;
+    margin:auto;
+}
+.list__button.button-calm{
+    background-color:#00aaff!important;
+}
+
+/*.slider {*/
+    /*height: 50px;*/
+/*}*/
+/*.slider-slide {*/
+    /*width: auto!important;*/
+    /*color: #000;*/
+    /*background-color: #fff; text-align: center;*/
+    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; }*/

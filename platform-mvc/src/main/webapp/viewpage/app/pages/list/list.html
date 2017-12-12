@@ -1,0 +1,103 @@
+<ion-view view-title="应用中心">
+    <!--<ion-nav-buttons side="left">-->
+        <!--<button class="button button-icon ion-chevron-left button-clear list__nav__button">-->
+            <!--应用-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content delegate-handle="mainScroll">
+        <div class="card-reset card">
+            <label class="item item-input list__item-input">
+                <i class="icon ion-search placeholder-icon list__input--search__icon" ng-show="!vm.focus && !vm.search"> 搜索</i>
+                <!--<input type="text" placeholder="搜索" class="list__input&#45;&#45;search" ng-model="vm.search" ng-keypress="vm.searchFn($event)">-->
+                <input type="text" class="list__input--search" ng-model="vm.search"
+                       ng-keypress="$event.which == 13 && vm.searchFn($event)" ng-focus="vm.focus = true" ng-blur="vm.focus = false">
+            </label>
+            <img class="full-image" component-img-by-dpr>
+            <!--<ion-slide-box does-continue="true" auto-play="true">-->
+                <!--<ion-slide ng-repeat="img in vm.imgs">-->
+                    <!--<div>-->
+                        <!--<img class="full-image" ng-src="{{img}}">-->
+                    <!--</div>-->
+                <!--</ion-slide>-->
+            <!--</ion-slide-box>-->
+        </div>
+        <div>
+            <ion-scroll zooming="false" direction="x" scrollbar-x="false" style="width: 100%;height: 64px;white-space: nowrap"
+                delegate-handle="horizontal" horizontal-scroll-fix="mainScroll">
+        <!--<div style="width: 5000px; height: 100px; background: url('http://www.runoob.com/try/demo_source/Europe_geological_map-en.jpg') repeat"></div>-->
+        <div class="tabs-striped tabs-color-calm">
+            <div class="tabs tabs-reset static">
+                <a class="tab-item tab-item-reset" ng-class="{active:type.active}" ng-repeat="type in vm.types" ng-click="vm.changType(vm.types, type)">
+                    {{type.typename}}
+                </a>
+                <!--<a class="tab-item tab-item-reset active" ui-sref="root.detail">-->
+                <!--教学类-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" ui-sref="root.detail">-->
+                <!--管理类-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--查询类qqqqqqqqq-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--浏览类-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--研究类-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--查询类1-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--查询类2-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--查询类3-->
+                <!--</a>-->
+                <!--<a class="tab-item tab-item-reset" href="#">-->
+                <!--查询类4-->
+                <!--</a>-->
+            </div>
+        </div>
+    </ion-scroll>
+</div>
+
+
+        <div class="list">
+            <a class="item item-avatar list__item-avatar item-button-right list__item" ng-repeat="app in vm.apps">
+                <img ng-src="{{app.appLogo}}">
+                <div class="list__item--name">
+                    <div class="list__item--name__content">
+                        <h2>{{app.appName}}</h2> <p ng-if="app.appVersion.versionName">v{{app.appVersion.versionName}}</p>
+                    </div>
+                </div>
+                <button class="button button-calm list__button" ng-if="app.displayPosition != '1' && app.added != '1'" ng-click="vm.addMyApp(app)">
+                    添加应用
+                </button>
+                <button class="button button-outline button-stable list__button" ng-if="app.displayPosition == '1' || app.added == '1'"
+                        ng-disabled="true">
+                    已添加
+                </button>
+            </a>
+            <!--<a class="item item-thumbnail-left">-->
+                <!--<img src="images/google-material.png"> <h2>Material Design</h2> <p>A visual language of design & innovation</p>-->
+            <!--</a>-->
+            <!--<a class="item item-thumbnail-left"> <img src="images/logo.png"> <h2>Ionic Material</h2> <p>Their love-child</p>-->
+            <!--</a>-->
+
+            <div ng-if="vm.noData" class="text-center">
+                <img src="images/Nodata_img.jpg" alt="">
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="vm.hasMore" on-infinite="vm.getApps()" distance="1%"></ion-infinite-scroll>
+
+
+        <!--<ion-scroll zooming="false" direction="x" scrollbar-x="false" style="width: 375px;height: 200px;border: 1px solid;white-space: nowrap">-->
+            <!--&lt;!&ndash;<div style="width: 5000px; height: 100px; background: url('http://www.runoob.com/try/demo_source/Europe_geological_map-en.jpg') repeat"></div>&ndash;&gt;-->
+            <!--wwwwwwwwwwwwwwwwwwddddddddddddddddddddddddddddddddddddddddddddddddddd-->
+        <!--</ion-scroll>-->
+        <!--<ion-nav-view name="content">-->
+
+        <!--</ion-nav-view>-->
+    </ion-content>
+</ion-view>

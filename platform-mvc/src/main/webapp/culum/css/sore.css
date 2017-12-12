@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*成绩*/
+.soreTable{}
+	.markTable,.curricTable{ border-collapse:collapse;}
+	.markTable th,.markTable td{ border:1px solid #eaeaea; text-align:center; border-top:none;}
+	.markTable th{ background:#f7f7f7; font-size:16px; color:#010101; height:72px; line-height:72px;}
+	.markTable td{ height:36px; line-height:36px; color:#666; font-size:14px;}
+	
+/*课表*/
+.curricTable th{ background:#f6f6f6; padding:25px 0 10px;}
+	.curricTable th,.curricTable td{ border:1px solid #eaeaea; text-align:center; border-top:none;}
+	.curricTable th h3{ font-size:16px; color:#000;}
+	.curricTable th b{ font-size:12px; color:#c4c4c4; display:block; margin-top:8px;}
+	.curricTable td.selectedColor{ border-right:1px solid #0179e9; }
+	.curricTable p{ color:#666; font-size:14px; padding:30px 13px 20px; line-height:24px; }

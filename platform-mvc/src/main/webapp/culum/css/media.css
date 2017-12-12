@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.boxWidth{ max-width:1160px; margin:0 auto;}
+/*响应式导航设计*/
+.mediaNav{ float:right; margin-top:30px; padding-right:10px; display:none \9; *display:none; }
+.mediaTitle{ padding-left:15px; transition: all 2s ease;}
+.mediaUl{ position:absolute; z-index:999; background:#000; width:98%; padding:0 1%; right:1%; top:84px; padding:10px 0;
+ display:none; transition: all .4s ease-in-out;}
+.mediaUl li{ padding:6px 30px;}
+.mediaUl li a{ color:#fff; text-decoration:none; padding-bottom:4px; font-size:14px;}
+.mediaUl li a:hover{ border-bottom:2px solid #fff;}
+
+
+
+@media screen and (max-width: 300px){
+ 		.nav,.headRight{ display:none;}
+		.popularUl li{ width:50%;}
+		.newsBox{ padding:0 10px;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.subject{ margin-bottom:6%;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.workBanner{ display:none;}
+		.codeUl{ margin-bottom:20px;}
+		.codeUl li{ padding-right:8%; margin-right:8%;}
+		.latest{ padding-left:10px;}
+		.mediaNav{ padding-right:0;}
+}
+@media screen and (max-width: 374px) {
+		.nav,.headRight{ display:none;}
+		.popularUl li{ width:33%;}
+		.newsBox{ padding:0;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.subject{ margin-bottom:6%;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.workBanner{ display:none;}
+		.codeUl{ margin-bottom:20px;}
+		.codeUl li{ padding-right:8%; margin-right:8%;}
+		.latest{ padding-left:10px;}
+		.mediaNav{ padding-right:0;}
+}
+@media (min-width:375px) and (max-width: 413px) {
+		.nav,.headRight{ display:none;}
+		.popularUl li{ width:33%;}
+		.newsBox{ padding:0;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.subject{ margin-bottom:6%;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.workBanner{ display:none;}
+		.codeUl{ margin-bottom:20px;}
+		.codeUl li{ padding-right:8%; margin-right:8%;}
+		.latest{ padding-left:10px;}
+}
+@media (min-width:414px) and (max-width: 479px) {
+		.nav,.headRight{ display:none;}
+		.popularUl li{ width:33.333%;}
+		.newsBox{ padding:0;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.subject{ margin-bottom:6%;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.workBanner{ display:none;}
+		.codeUl{ margin-bottom:20px;}
+		.codeUl li{ padding-right:8%; margin-right:8%;}
+		.latest{ padding-left:10px;}
+}
+@media (min-width:480px) and (max-width:768px){
+		.nav,.headRight{ display:none;}
+		.popularUl li{ width:25%;}
+		.newsBox{ padding:0;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.subject{ margin-bottom:6%;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.workBanner{ display:none;}
+		.codeUl{ margin-bottom:20px;}
+		
+		
+}
+@media screen and (max-width: 1024px) {
+		.nav,.headRight{ display:none;}
+		.newsBox{ padding:0 15px;}
+		.mediaboxUl li{ margin-bottom:15px;}
+		.mediaboxUl img{ width:99%;}
+		.latest{ padding-left:15px;}
+		.characUl li{ margin-bottom:15px;}
+		.characUl li img{ width:99%; height:99%;}
+		.codeUl{ width:30%;}
+		.codeUl li{ padding-right:8%; margin-right:8%;}
+		.popularUl li{ padding:0 5%;}
+		.switch{ margin-top:5%;}
+		
+		/*应用页面*/
+		.subNav{ display:none;}
+		.wisdomSort{ margin-top:1%;}
+			.wisdomSort li{ margin:0; border-right:none;}
+			.wisdomTitle{ padding-left:10px; padding-right:10px;}
+			.wisdomTitle h3,.rankTitle{ font-size:18px;}
+			.wisdomTitle span{ margin-top:0;}
+			.wisdomTitle h3 b{ top:3px; }
+			
+		.bestSell{ margin-bottom:4%; }
+			.rankUl{ margin-top:3%;}
+			.rankUl li a,.rankUl span em,.rankUl span{ font-size:16px;}
+			
+		/*资源*/
+		.bran_resou{ margin-bottom:4%;}
+		.special_pic li{ margin-bottom:4%;}
+		.special_pic li img{ margin:0 auto; display:block;}
+		
+		/*学生空间*/
+		.space_message{ margin-top:20px;}
+		
+		/*帮助中心*/
+		.resou_search{ margin-top:20px;}
+		
+		/*应用页面2*/
+		.amount_ul li{ width:31%;}
+		
+		/*班级相册*/
+		.album-add-box{ left:18%;}
+		.album-add-width{ width:100%;}
+		
+}
+
+@media screen and (min-width:1024px){
+		.mediaNav{ display:none;}
+		
+		.wisdomSort li { width: 23%; padding:0;}
+		.bestSell{ width: 31%;  margin-right: 3%;}
+		.bestLast{ margin:0; padding-right:0;}
+}
+
+
+
+
