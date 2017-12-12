@@ -77,7 +77,7 @@ public class PlatFormWebUserLoginServiceImpl implements PlatFormWebUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto webUserLogin(String account, String password, HttpServletRequest request) {
+    public BaseResultDto webUserLogin(String account, String password, String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(account) && StringUtils.isNotBlank(password)) {
             PlatFormUser platFormUser = platFormSysUserLoginDao.getUserByAccount(account, CommonEnum.USER_TYPE.厂商用户.getValue());
@@ -141,7 +141,6 @@ public class PlatFormWebUserLoginServiceImpl implements PlatFormWebUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), account, "", "用户登录", handleip, "开发者登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {
