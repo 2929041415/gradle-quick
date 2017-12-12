@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tzplatform.dao.system.PlatFormTechSupportDao">
+<mapper namespace="com.combanc.dao.system.PlatFormTechSupportDao">
 
     <select id="questionList" parameterType="PlatFormTechSupport" resultType="PlatFormTechSupport">
         select t.* from platform_technicalsupport t left join platform_dict dict on t.questiontype = dict.type where 1=1
