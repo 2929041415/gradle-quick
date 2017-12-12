@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service(value = "PlatFormApiService")
+@Service(value = "platFormApiService")
 public class PlatFormApiServiceImpl implements PlatFormApiService {
     @Autowired
     private PlatFormApiDao platFormApiDao;
