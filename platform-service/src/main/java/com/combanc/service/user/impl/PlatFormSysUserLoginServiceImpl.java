@@ -139,7 +139,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto mobileLogin(String account, String password, HttpServletRequest request) {
+    public BaseResultDto mobileLogin(String account, String password,String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(account) && StringUtils.isNotBlank(password)) {
             MobileUser mobileUser = platFormSysUserLoginDao.getMobieUserByAccount(account);
@@ -167,7 +167,6 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), accountId, "", "用户登录", handleip, "手机用户登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {
@@ -188,7 +187,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto mobieUserByWeiXin(String weixin, HttpServletRequest request) {
+    public BaseResultDto mobieUserByWeiXin(String weixin, String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(weixin)) {
             MobileUser mobileUser = platFormSysUserLoginDao.getMobieUserByWeiXin(weixin);
@@ -209,7 +208,6 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), mobileUser.getId(), mobileUser.getUserName(), "用户登录", handleip, "手机用户登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {
@@ -230,7 +228,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto mobieUserByQQ(String qq, HttpServletRequest request) {
+    public BaseResultDto mobieUserByQQ(String qq, String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(qq)) {
             MobileUser mobileUser = platFormSysUserLoginDao.getMobieUserByQQ(qq);
@@ -251,7 +249,6 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), mobileUser.getId(), mobileUser.getUserName(), "用户登录", handleip, "手机用户QQ登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {
@@ -272,7 +269,7 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto mobieUserByWeiBo(String weibo, HttpServletRequest request) {
+    public BaseResultDto mobieUserByWeiBo(String weibo, String handleip) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(weibo)) {
             MobileUser mobileUser = platFormSysUserLoginDao.getMobieUserByWeiBo(weibo);
@@ -293,7 +290,6 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
                 } else {
                     handleresult = CommonEnum.HANDLE_REUSLT.failed.getValue();
                 }
-                String handleip = CommonUtils.getRemoteAddress(request);
                 PlatFormNormalLog platFormNormalLog = new PlatFormNormalLog(UidUtils.getId(), mobileUser.getId(), mobileUser.getUserName(), "用户登录", handleip, "手机用户微博登录", handleresult, new Date(), new Date());
                 platFormLogService.insertNormalLog(platFormNormalLog);
             } else {
@@ -375,9 +371,9 @@ public class PlatFormSysUserLoginServiceImpl implements PlatFormSysUserLoginServ
      * @return
      */
     @Override
-    public BaseResultDto userLogout(HttpServletRequest request) {
+    public BaseResultDto userLogout(String token) {
         BaseResultDto baseResultDto = new BaseResultDto();
-        String token = request.getHeader(CommonEnum.HEAD_PARAM.TOKEN.getValue());
+
         boolean logoutResult = redisClusterHelper.delKey(token);
         if (!logoutResult) {
             baseResultDto.setCode(ResultMessage.SUCCESS_CODE);

@@ -1,10 +1,12 @@
 package com.combanc.web.mobileplatform;
 
 import com.combanc.entity.common.BaseResultDto;
+import com.combanc.entity.common.CommonEnum;
 import com.combanc.service.tokenIpfilter.AccessTokenIp;
 import com.combanc.service.tokenfilter.AccessToken;
 import com.combanc.service.user.PlatFormMobileService;
 import com.combanc.service.user.PlatFormSysUserLoginService;
+import com.combanc.utils.common.CommonUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +36,8 @@ public class PlatFormMobileLoginController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/mobileLogin", produces = "application/json;charset=utf-8")
     public BaseResultDto mobileLogin(String account, String password, HttpServletRequest request) {
-        return platFormSysUserLoginService.mobileLogin(account, password, request);
+        String handleip = CommonUtils.getRemoteAddress(request);
+        return platFormSysUserLoginService.mobileLogin(account, password, handleip);
     }
 
     /**
@@ -45,7 +48,8 @@ public class PlatFormMobileLoginController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/mobieUserByWeiXin", produces = "application/json;charset=utf-8")
     public BaseResultDto mobieUserByWeiXin(String weixin, HttpServletRequest request) {
-        return platFormSysUserLoginService.mobieUserByWeiXin(weixin, request);
+        String handleip = CommonUtils.getRemoteAddress(request);
+        return platFormSysUserLoginService.mobieUserByWeiXin(weixin, handleip);
     }
 
     /**
@@ -56,7 +60,8 @@ public class PlatFormMobileLoginController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/mobieUserByQQ", produces = "application/json;charset=utf-8")
     public BaseResultDto mobieUserByQQ(String qq, HttpServletRequest request) {
-        return platFormSysUserLoginService.mobieUserByQQ(qq, request);
+        String handleip = CommonUtils.getRemoteAddress(request);
+        return platFormSysUserLoginService.mobieUserByQQ(qq, handleip);
     }
 
     /**
@@ -67,7 +72,8 @@ public class PlatFormMobileLoginController {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/mobieUserByWeiBo", produces = "application/json;charset=utf-8")
     public BaseResultDto mobieUserByWeiBo(String weibo, HttpServletRequest request) {
-        return platFormSysUserLoginService.mobieUserByWeiBo(weibo, request);
+        String handleip = CommonUtils.getRemoteAddress(request);
+        return platFormSysUserLoginService.mobieUserByWeiBo(weibo, handleip);
     }
 
     /**
@@ -131,7 +137,8 @@ public class PlatFormMobileLoginController {
     @AccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/userLogout", produces = "application/json;charset=utf-8")
     public BaseResultDto userLogout(HttpServletRequest request) {
-        return platFormSysUserLoginService.userLogout(request);
+        String token = request.getHeader(CommonEnum.HEAD_PARAM.TOKEN.getValue());
+        return platFormSysUserLoginService.userLogout(token);
     }
 
 

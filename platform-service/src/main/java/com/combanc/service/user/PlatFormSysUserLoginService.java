@@ -10,18 +10,18 @@ public interface PlatFormSysUserLoginService {
 
     BaseResultDto verifyUserToken(String token, String account);
 
-    BaseResultDto mobileLogin(String account, String password, HttpServletRequest request);
+    BaseResultDto mobileLogin(String account, String password, String handleip);
 
-    BaseResultDto mobieUserByWeiXin(String weixin, HttpServletRequest request);
+    BaseResultDto mobieUserByWeiXin(String weixin, String handleip);
 
-    BaseResultDto mobieUserByQQ(String qq, HttpServletRequest request);
+    BaseResultDto mobieUserByQQ(String qq, String handleip);
 
-    BaseResultDto mobieUserByWeiBo(String weibo, HttpServletRequest request);
+    BaseResultDto mobieUserByWeiBo(String weibo, String handleip);
 
     BaseResultDto telphoneLogin(String telphone, String captcha);
 
     BaseResultDto sendSms(String telphone);
 
-    BaseResultDto userLogout(HttpServletRequest request);
+    BaseResultDto userLogout(String token);
 
 }
