@@ -2,7 +2,7 @@ package com.combanc.web.mobileplatform;
 
 import com.combanc.entity.common.BaseResultDto;
 import com.combanc.entity.mobileplatform.Poster;
-import com.combanc.service.mobileplatform.impl.PlatformPosterServiceImpl;
+import com.combanc.service.mobileplatform.PlatformPosterService;
 import com.combanc.service.tokenfilter.AccessToken;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 public class PlatformPosterController {
 
     @Resource
-    private PlatformPosterServiceImpl mobilePlatformPosterService;
+    private PlatformPosterService platformPosterService;
 
 
     /**
@@ -35,7 +35,7 @@ public class PlatformPosterController {
     @RequestMapping(method = RequestMethod.POST, value = "/addPoster", produces = "application/json;charset=utf-8")
     public BaseResultDto addPoster(Poster poster, @RequestParam(value = "posterImage", required = false) CommonsMultipartFile[] posterImage) {
 
-        return mobilePlatformPosterService.addPoster(poster, posterImage);
+        return platformPosterService.addPoster(poster, posterImage);
     }
 
     /**
@@ -47,7 +47,7 @@ public class PlatformPosterController {
     @AccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/listPoster", produces = "application/json;charset=utf-8")
     public BaseResultDto listPoster(Poster poster, HttpServletRequest request) {
-        return mobilePlatformPosterService.listPoster(poster, request);
+        return platformPosterService.listPoster(poster, request);
     }
 
     /**
@@ -60,7 +60,7 @@ public class PlatformPosterController {
     @AccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/updatePoster", produces = "application/json;charset=utf-8")
     public BaseResultDto updatePoster(Poster poster, @RequestParam(value = "posterImage", required = false) CommonsMultipartFile[] posterImage) {
-        return mobilePlatformPosterService.updatePoster(poster, posterImage);
+        return platformPosterService.updatePoster(poster, posterImage);
     }
 
     /**
@@ -72,7 +72,7 @@ public class PlatformPosterController {
     @AccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/deletePoster", produces = "application/json;charset=utf-8")
     public BaseResultDto deletePoster(Poster poster) {
-        return mobilePlatformPosterService.deletePoster(poster);
+        return platformPosterService.deletePoster(poster);
     }
 
     /**
@@ -84,6 +84,6 @@ public class PlatformPosterController {
     @AccessToken
     @RequestMapping(method = RequestMethod.POST, value = "/updateStatus", produces = "application/json;charset=utf-8")
     public BaseResultDto updateStatus(Poster poster) {
-        return mobilePlatformPosterService.updateStatus(poster);
+        return platformPosterService.updateStatus(poster);
     }
 }
