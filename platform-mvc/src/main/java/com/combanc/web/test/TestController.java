@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestController {
 
     @Autowired
-    private TestService testService;
+    private TestService  testService;
 
     @ResponseBody
     @RequestMapping(value = "/resultOne", produces = "application/json; charset=utf-8")
     public Integer resultOne() {
-        return testService.resultOne();
+        Integer result = testService.resultOne();
+        return result;
     }
 }
