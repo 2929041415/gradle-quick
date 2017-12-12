@@ -9,7 +9,7 @@ import com.combanc.service.channel.PlatFormChannelContentService;
 import com.combanc.utils.aoplog.AopLog;
 import com.combanc.utils.common.CommonUtils;
 import com.combanc.utils.common.UidUtils;
-import com.tzplatform.service.helper.SambaService;
+import com.combanc.service.helper.SambaService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
