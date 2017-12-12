@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service(value = "PlatFormApiManagerService")
+@Service(value = "platFormApiManagerService")
 public class PlatFormApiManagerServiceImpl implements PlatFormApiManagerService {
 
 
