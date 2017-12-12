@@ -4,7 +4,7 @@ import com.combanc.entity.common.BaseResultDto;
 import com.combanc.entity.common.ResultMessage;
 import com.combanc.entity.mobileplatform.NoticeModel;
 import com.combanc.service.helper.SambaService;
-import com.combanc.service.mobileplatform.impl.CommonServiceImpl;
+import com.combanc.service.mobileplatform.CommonService;
 import com.combanc.utils.common.CommonUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +30,7 @@ public class CommonController {
     @Value("${poater.file.path}")
     private String posterPath; //海报
     @Resource
-    private CommonServiceImpl commonService;
+    private CommonService commonService;
     @Resource
     private SambaService sambaService;
 
