@@ -6,7 +6,7 @@
             http://code.alibabatech.com/schema/dubbo
             http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="combanc-platform-service" />
+    <dubbo:application name="combanc_platform_provider" />
 
 
     <dubbo:registry address="zookeeper://10.5.1.123:2181"/>

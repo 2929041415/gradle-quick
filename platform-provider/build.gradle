@@ -1,0 +1,33 @@
+apply plugin: 'war'
+
+
+dependencies{
+    // 依赖 core 模块
+    compile project(":platform-service")
+    compile project(":platform-entity")
+}
+
+task jarWithoutResources(type: Jar) {
+    baseName project.name
+    from("$buildDir/classes/main")
+}
+
+war{
+    baseName ="provider"
+    version = ""
+    dependsOn jarWithoutResources
+    from("$projectDir/src/main/resources") {
+        include "*.properties"
+        include "**/*.xml"
+        into("WEB-INF/classes")
+    }
+    classpath=classpath - sourceSets.main.output
+    classpath fileTree(dir:libsDir, include:"${project.name}-${version}.jar")
+}
+
+task('jarPath')<<{
+    configurations.runtime.resolve().each {
+        print it.toString()+";"
+    }
+    println();
+}
