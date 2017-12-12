@@ -52,7 +52,7 @@
 
     <!--移动平台-->
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformCampusSceneryService" ref="platformCampusSceneryService"/>
-    <dubbo:service interface="com.combanc.service.mobileplatform.PlatFormFeedBackService" ref="platFormFeedBackService"/>
+    <dubbo:service interface="com.combanc.service.mobileplatform.PlatFormFeedBackService" ref="platformFeedBackService"/>
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformLostFoundService" ref="platformLostFoundService"/>
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformNoticeService" ref="platformNoticeService"/>
     <dubbo:service interface="com.combanc.service.mobileplatform.PlatformPosterService" ref="platformPosterService"/>
