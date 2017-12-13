@@ -5,4 +5,5 @@ include 'platform-utils'
 include 'platform-entity'
 include 'platform-mvc'
 include 'platform-provider'
+include 'platform-mq'
 

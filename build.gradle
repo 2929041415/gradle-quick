@@ -41,6 +41,7 @@ subprojects {
         zookeeperversion = '3.4.6'
         zkclientversion = '0.5'
         hessionversion = "4.0.51"
+        mqversion = "4.1.0-incubating"
     }
 
     repositories {
@@ -109,7 +110,10 @@ subprojects {
                 "com.alibaba:dubbo:$dubboversion",
                 "org.apache.zookeeper:zookeeper:$zookeeperversion",
                 "com.101tec:zkclient:$zkclientversion",
-                "com.caucho:hessian:$hessionversion"
+                "com.caucho:hessian:$hessionversion",
+                "org.apache.rocketmq:rocketmq-client:$mqversion",
+                "org.apache.rocketmq:rocketmq-common:$mqversion",
+                "org.apache.rocketmq:rocketmq-all:$mqversion"
         )
 
         // 测试依赖
