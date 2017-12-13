@@ -138,6 +138,48 @@ public class SambaUtils {
         out.close();
     }
 
+
+    /**
+     * 显示图片
+     * @param name
+     * @param password
+     * @param host
+     * @param remoteUrl  图片位置
+     * @throws Exception
+     */
+    public static SmbFileInputStream showImageInputStream(String name, String password, String host,String remoteUrl) throws  Exception{
+        HttpServletResponse response  = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
+        SmbFileInputStream in = null;
+        // samba URL组合
+        StringBuffer urlBuffer = new StringBuffer();
+        // 转换源路径中的反斜杠
+        remoteUrl = remoteUrl.replaceAll("\\\\", "/");
+        // 判断是否为匿名访问
+        if (null != name && password != null && name.length() > 0) {
+            urlBuffer.append("smb://");
+            urlBuffer.append(name);
+            urlBuffer.append(":");
+            urlBuffer.append(password);
+            urlBuffer.append("@");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(remoteUrl);
+        } else {
+            urlBuffer.append("samba://");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(remoteUrl);
+        }
+        String targetPath = urlBuffer.toString();
+        SmbFile targetSmbFile = new SmbFile(targetPath);
+        // 页面显示图片时必须加
+        response.setContentType("image/jpeg");
+        // 读取要下载的文件，保存到文件输入流
+        in = new SmbFileInputStream(targetSmbFile);
+
+        return in;
+    }
+
     /**
      * 查看应用小图标
      * @param bytes
@@ -163,6 +205,8 @@ public class SambaUtils {
         // 关闭输出流
         out.close();
     }
+
+
     public static void download(String name, String password, String host, String source, String target)
             throws Exception {
         SambaHelper.download(name, password, host, source, target);

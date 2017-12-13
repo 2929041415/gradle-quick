@@ -36,7 +36,7 @@ public class PlatFormRoleServiceImpl implements PlatFormRoleService {
      */
     @Override
     @Transactional
-    @AopLog(menuname = "角色管理",description = "添加角色")
+    //@AopLog(menuname = "角色管理",description = "添加角色")
     public BaseResultDto addRole(PlatFormRole platFormRole,String menuids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormRole.setId(UidUtils.getId());
@@ -62,7 +62,7 @@ public class PlatFormRoleServiceImpl implements PlatFormRoleService {
      */
     @Override
     @Transactional
-    @AopLog(menuname = "角色管理",description = "修改角色")
+   // @AopLog(menuname = "角色管理",description = "修改角色")
     public BaseResultDto editRole(PlatFormRole platFormRole,String menuids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormRoleDao.editRole(platFormRole);
@@ -86,7 +86,7 @@ public class PlatFormRoleServiceImpl implements PlatFormRoleService {
      * @return
      */
     @Override
-    @AopLog(menuname = "角色管理",description = "删除角色")
+    //@AopLog(menuname = "角色管理",description = "删除角色")
     public BaseResultDto delRole(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormRoleDao.delRole(id);
@@ -136,7 +136,7 @@ public class PlatFormRoleServiceImpl implements PlatFormRoleService {
      * @return
      */
     @Override
-    @AopLog(menuname = "角色管理",description = "角色关联菜单")
+    //@AopLog(menuname = "角色管理",description = "角色关联菜单")
     @Transactional
     public BaseResultDto addResourceToRole(String roleid, String menuids) {
         BaseResultDto baseResultDto = new BaseResultDto();

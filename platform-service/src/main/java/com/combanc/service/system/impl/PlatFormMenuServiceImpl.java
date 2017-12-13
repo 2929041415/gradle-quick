@@ -32,7 +32,7 @@ public class PlatFormMenuServiceImpl implements PlatFormMenuService {
      * @return
      */
     @Override
-    @AopLog(menuname = "菜单管理",description = "添加菜单")
+    //@AopLog(menuname = "菜单管理",description = "添加菜单")
     public BaseResultDto addMenu(PlatFormMenu platFormMenu) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormMenu.setId(UidUtils.getId());
@@ -54,7 +54,7 @@ public class PlatFormMenuServiceImpl implements PlatFormMenuService {
      * @return
      */
     @Override
-    @AopLog(menuname = "菜单管理",description = "更新菜单")
+    //@AopLog(menuname = "菜单管理",description = "更新菜单")
     public BaseResultDto editMenu(PlatFormMenu platFormMenu) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormMenuDao.editMenu(platFormMenu);
@@ -75,7 +75,7 @@ public class PlatFormMenuServiceImpl implements PlatFormMenuService {
      * @return
      */
     @Override
-    @AopLog(menuname = "菜单管理",description = "删除菜单")
+    //@AopLog(menuname = "菜单管理",description = "删除菜单")
     public BaseResultDto delMenu(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormMenuDao.delMenu(id);

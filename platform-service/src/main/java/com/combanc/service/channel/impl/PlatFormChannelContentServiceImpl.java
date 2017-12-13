@@ -6,10 +6,9 @@ import com.combanc.entity.channel.PlatFormChannelFile;
 import com.combanc.entity.common.BaseResultDto;
 import com.combanc.entity.common.ResultMessage;
 import com.combanc.service.channel.PlatFormChannelContentService;
-import com.combanc.utils.aoplog.AopLog;
+import com.combanc.service.helper.SambaService;
 import com.combanc.utils.common.CommonUtils;
 import com.combanc.utils.common.UidUtils;
-import com.combanc.service.helper.SambaService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -45,7 +43,7 @@ public class PlatFormChannelContentServiceImpl implements PlatFormChannelContent
      * @return
      */
     @Override
-    @AopLog(description = "添加栏目内容", menuname = "栏目管理")
+    //@AopLog(description = "添加栏目内容", menuname = "栏目管理")
     public BaseResultDto addContent(PlatFormChannelContent platFormChannelContent, CommonsMultipartFile[] channelFileList) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormChannelContent.setId(UidUtils.getId());
@@ -107,7 +105,7 @@ public class PlatFormChannelContentServiceImpl implements PlatFormChannelContent
      */
     @Override
     @Transactional
-    @AopLog(description = "修改栏目内容", menuname = "栏目管理")
+    //@AopLog(description = "修改栏目内容", menuname = "栏目管理")
     public BaseResultDto editContent(PlatFormChannelContent platFormChannelContent, CommonsMultipartFile[] channelFileList, String[] deleteIdList) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormChannelContent.setUpdatetime(new Date());
@@ -137,7 +135,7 @@ public class PlatFormChannelContentServiceImpl implements PlatFormChannelContent
      * @return
      */
     @Override
-    @AopLog(description = "删除栏目内容", menuname = "栏目管理")
+    //@AopLog(description = "删除栏目内容", menuname = "栏目管理")
     public BaseResultDto delContent(PlatFormChannelContent platFormChannelContent) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormChannelContentDao.delContent(platFormChannelContent);
@@ -217,13 +215,8 @@ public class PlatFormChannelContentServiceImpl implements PlatFormChannelContent
      * @param response
      */
     @Override
-    public void getFileList(String id, HttpServletResponse response) {
+    public List<PlatFormChannelFile> getFileList(String id) {
         List<PlatFormChannelFile> fileList = platFormChannelContentDao.getContentFile(id);
-        if (fileList != null && fileList.size() > 0) {
-            for (PlatFormChannelFile file : fileList) {
-                String filename = file.getFileoldname();
-                sambaService.getSambaFileOut(file.getFilepath(), filename, response);
-            }
-        }
+        return fileList;
     }
 }

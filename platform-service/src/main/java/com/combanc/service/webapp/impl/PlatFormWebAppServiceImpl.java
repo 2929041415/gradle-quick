@@ -97,7 +97,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      */
     @Override
     @Transactional
-    @AopLog(description = "添加应用", menuname = "应用管理")
+    //@AopLog(description = "添加应用", menuname = "应用管理")
     public BaseResultDto addWebApp(PlatFormWebApp platFormWebApp, CommonsMultipartFile applogosmall, CommonsMultipartFile applogo, CommonsMultipartFile regestinfofile, CommonsMultipartFile apporcodeinfo, CommonsMultipartFile appfileone, CommonsMultipartFile appfiletwo, CommonsMultipartFile appfilethree, CommonsMultipartFile appfilefour, CommonsMultipartFile appfile) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //设置应用主键
@@ -303,7 +303,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      */
     @Override
     @Transactional
-    @AopLog(description = "修改应用", menuname = "应用管理")
+    //@AopLog(description = "修改应用", menuname = "应用管理")
     public BaseResultDto editWebApp(PlatFormWebApp platFormWebApp, CommonsMultipartFile applogosmall, CommonsMultipartFile applogo, CommonsMultipartFile regestinfofile, CommonsMultipartFile apporcodeinfo, CommonsMultipartFile appfileone, CommonsMultipartFile appfiletwo, CommonsMultipartFile appfilethree, CommonsMultipartFile appfilefour, String[] deleteIdList, CommonsMultipartFile appfile) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //判断app小图标是否为空
@@ -562,7 +562,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      * @return
      */
     @Override
-    @AccountAopLog(description = "应用位置调整", menuname = "应用对外接口")
+    //@AccountAopLog(description = "应用位置调整", menuname = "应用对外接口")
     public BaseResultDto orderAppCollect(String ids, String user, String type, String requestSource) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //先删除用户所对应的收藏应用
@@ -911,7 +911,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      */
     @Override
     @Transactional
-    @AccountAopLog(description = "用户评分", menuname = "应用对外接口")
+    //@AccountAopLog(description = "用户评分", menuname = "应用对外接口")
     public BaseResultDto addComment(PlatFormAppComment platFormAppComment) {
         platFormAppComment.setId(UidUtils.getId());
         platFormAppComment.setCreatetime(new Date());
@@ -999,7 +999,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      */
     @Override
     @Transactional
-    @AccountAopLog(description = "收藏应用", menuname = "应用对外接口")
+    //@AccountAopLog(description = "收藏应用", menuname = "应用对外接口")
     public BaseResultDto appUseCollect(String user, String appid, String type, String requestSource) {
         String appsort = null;
         BaseResultDto baseResultDto = new BaseResultDto();
@@ -1153,7 +1153,7 @@ public class PlatFormWebAppServiceImpl implements PlatFormWebAppService {
      */
     @Override
     @Transactional
-    @AccountAopLog(description = "取消应用", menuname = "应用对外接口")
+    //@AccountAopLog(description = "取消应用", menuname = "应用对外接口")
     public BaseResultDto deleteAppCollect(String ids, String user, String requestSource) {
         BaseResultDto baseResultDto = new BaseResultDto();
         String[] idArray = null;

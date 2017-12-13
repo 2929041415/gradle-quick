@@ -25,7 +25,7 @@ public class PlatFormNoticeServiceImpl implements PlatFormNoticeService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "添加公告")
+    //@AopLog(menuname = "接口管理", description = "添加公告")
     public BaseResultDto addNotice(PlatFormNotice platFormNotice) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormNotice.setId(UidUtils.getId());
@@ -49,7 +49,7 @@ public class PlatFormNoticeServiceImpl implements PlatFormNoticeService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "删除公告")
+    //@AopLog(menuname = "接口管理", description = "删除公告")
     public BaseResultDto deleteNotice(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer count = platFormNoticeDao.deleteNotice(id);
@@ -88,7 +88,7 @@ public class PlatFormNoticeServiceImpl implements PlatFormNoticeService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "修改公告")
+    //@AopLog(menuname = "接口管理", description = "修改公告")
     public BaseResultDto updateNotice(PlatFormNotice platFormNotice) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormNotice.setUpdatetime(new Date());

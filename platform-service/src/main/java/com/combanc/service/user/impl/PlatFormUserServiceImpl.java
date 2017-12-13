@@ -41,7 +41,7 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理", description = "添加用户")
+    //@AopLog(menuname = "用户管理", description = "添加用户")
     @Transactional
     public BaseResultDto addSysUser(PlatFormUser platFormUser, String roleids) {
         BaseResultDto baseResultDto = new BaseResultDto();
@@ -93,7 +93,7 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理",description = "修改用户")
+    //@AopLog(menuname = "用户管理",description = "修改用户")
     @Transactional
     public BaseResultDto updateSysUser(PlatFormUser platFormUser, String roleids) {
         BaseResultDto baseResultDto = new BaseResultDto();
@@ -129,7 +129,7 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理",description = "删除用户")
+    //@AopLog(menuname = "用户管理",description = "删除用户")
     @Transactional
     public BaseResultDto delSysUser(PlatFormUser platFormUser) {
         BaseResultDto baseResultDto = new BaseResultDto();
@@ -155,7 +155,6 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理", description = "查询用户")
     public BaseResultDto userList(PlatFormUser platFormUser) {
         BaseResultDto baseResultDto = new BaseResultDto();
         List<PlatFormUser> resultList = platFormUserDao.userList(platFormUser);
@@ -219,7 +218,7 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理",description = "密码重置")
+    //@AopLog(menuname = "用户管理",description = "密码重置")
     public BaseResultDto resetPassWordByAccount(String accountid) {
         BaseResultDto baseResultDto = new BaseResultDto();
         PlatFormUser findInfo = new PlatFormUser();
@@ -279,7 +278,7 @@ public class PlatFormUserServiceImpl implements PlatFormUserService {
      * @return
      */
     @Override
-    @AopLog(menuname = "用户管理", description = "修改密码")
+    //@AopLog(menuname = "用户管理", description = "修改密码")
     public BaseResultDto updateUserPassword(String account, String passwordOld, String passwordNew) {
         BaseResultDto baseResultDto = new BaseResultDto();
         PlatFormUser user = platFormSysUserLoginDao.getUserByAccount(account,CommonEnum.USER_TYPE.系统用户.getValue());

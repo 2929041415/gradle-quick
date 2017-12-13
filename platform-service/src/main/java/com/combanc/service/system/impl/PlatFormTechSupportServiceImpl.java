@@ -26,7 +26,7 @@ public class PlatFormTechSupportServiceImpl implements PlatFormTechSupportServic
      * @return
      */
     @Override
-    @AopLog(menuname = "技术问答",description = "添加问题")
+    //@AopLog(menuname = "技术问答",description = "添加问题")
     public BaseResultDto addQuestion(PlatFormTechSupport platFormTechSupport) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormTechSupport.setId(UidUtils.getId());
@@ -48,7 +48,7 @@ public class PlatFormTechSupportServiceImpl implements PlatFormTechSupportServic
      * @return
      */
     @Override
-    @AopLog(menuname = "技术问答",description = "修改问题")
+    //@AopLog(menuname = "技术问答",description = "修改问题")
     public BaseResultDto editQuestion(PlatFormTechSupport platFormTechSupport) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormTechSupport.setCreatetime(new Date());
@@ -69,7 +69,7 @@ public class PlatFormTechSupportServiceImpl implements PlatFormTechSupportServic
      * @return
      */
     @Override
-    @AopLog(menuname = "技术问答",description = "删除问题")
+    //@AopLog(menuname = "技术问答",description = "删除问题")
     public BaseResultDto delQuestion(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormTechSupportDao.delQuestion(id);

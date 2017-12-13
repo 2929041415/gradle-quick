@@ -35,7 +35,7 @@ public class PlatFormApiManagerServiceImpl implements PlatFormApiManagerService 
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "添加接口")
+    //@AopLog(menuname = "接口管理", description = "添加接口")
     public BaseResultDto addApi(PlatFormApi api) {
         BaseResultDto baseResultDto = new BaseResultDto();
         api.setId(UidUtils.getId());
@@ -58,7 +58,7 @@ public class PlatFormApiManagerServiceImpl implements PlatFormApiManagerService 
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "修改接口")
+    //@AopLog(menuname = "接口管理", description = "修改接口")
     public BaseResultDto editApi(PlatFormApi api) {
         BaseResultDto baseResultDto = new BaseResultDto();
         api.setUpdatetime(new Date());
@@ -80,7 +80,7 @@ public class PlatFormApiManagerServiceImpl implements PlatFormApiManagerService 
      * @return
      */
     @Override
-    @AopLog(menuname = "接口管理", description = "删除接口")
+    //@AopLog(menuname = "接口管理", description = "删除接口")
     public BaseResultDto deleteApi(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer count = platFormApiManagerDao.deleteApi(id);

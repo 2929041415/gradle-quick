@@ -47,7 +47,7 @@ public class PlatformPosterServiceImpl implements PlatformPosterService {
      * @return
      */
     @Transactional
-    @AopLog(description = "添加海报", menuname = "海报管理")
+    //@AopLog(description = "添加海报", menuname = "海报管理")
     public BaseResultDto addPoster(Poster poster, CommonsMultipartFile[] posterImage) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //获取当前登录账号
@@ -148,7 +148,7 @@ public class PlatformPosterServiceImpl implements PlatformPosterService {
      * @return
      */
     @Override
-    @AopLog(description = "修改海报", menuname = "海报管理")
+    //@AopLog(description = "修改海报", menuname = "海报管理")
     public BaseResultDto updatePoster(Poster poster, CommonsMultipartFile[] posterImage) {
         BaseResultDto baseResultDto = new BaseResultDto();
         ///上传图片处理
@@ -194,7 +194,7 @@ public class PlatformPosterServiceImpl implements PlatformPosterService {
      * @return
      */
     @Override
-    @AopLog(description = "删除海报", menuname = "海报管理")
+    //@AopLog(description = "删除海报", menuname = "海报管理")
     public BaseResultDto deletePoster(Poster poster) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int resultCode = mobilePlatformPosterDao.deletePoster(poster);
@@ -215,7 +215,7 @@ public class PlatformPosterServiceImpl implements PlatformPosterService {
      * @return
      */
     @Override
-    @AopLog(description = "海报状态修改", menuname = "海报管理")
+    //@AopLog(description = "海报状态修改", menuname = "海报管理")
     public BaseResultDto updateStatus(Poster poster) {
         BaseResultDto baseResultDto = new BaseResultDto();
         if (CommonEnum.MOBILE_STATUS.上架.getValue().equals(poster.getStatus())) {

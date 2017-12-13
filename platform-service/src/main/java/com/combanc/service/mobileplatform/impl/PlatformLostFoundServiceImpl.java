@@ -51,7 +51,7 @@ public class PlatformLostFoundServiceImpl implements PlatformLostFoundService {
      */
     @Override
     @Transactional
-    @AopLog(description = "新增失物招领/寻物启事", menuname = "失物招领/寻物启事")
+    //@AopLog(description = "新增失物招领/寻物启事", menuname = "失物招领/寻物启事")
     public BaseResultDto addLostFound(LostFound lostFound, CommonsMultipartFile[] images) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //获取当前登录账号
@@ -137,7 +137,7 @@ public class PlatformLostFoundServiceImpl implements PlatformLostFoundService {
      * @return
      */
     @Override
-    @AopLog(description = "失物招领/寻物启事查看详情", menuname = "失物招领/寻物启事")
+    //@AopLog(description = "失物招领/寻物启事查看详情", menuname = "失物招领/寻物启事")
     public BaseResultDto lostFoundDetail(LostFound lostFound, HttpServletRequest request) {
         BaseResultDto baseResultDto = new BaseResultDto();
         LostFound lostFoundDetail = platformLostFoundDao.lostFoundDetail(lostFound);
@@ -162,7 +162,7 @@ public class PlatformLostFoundServiceImpl implements PlatformLostFoundService {
      * @return
      */
     @Override
-    @AopLog(description = "失物招领/寻物启事评论", menuname = "失物招领/寻物启事")
+    //@AopLog(description = "失物招领/寻物启事评论", menuname = "失物招领/寻物启事")
     public BaseResultDto review(LostFoundReview lostFoundReview) {
         BaseResultDto baseResultDto = new BaseResultDto();
 
@@ -205,7 +205,7 @@ public class PlatformLostFoundServiceImpl implements PlatformLostFoundService {
      * @return
      */
     @Override
-    @AopLog(description = "失物招领/寻物启事删除", menuname = "失物招领/寻物启事")
+    //@AopLog(description = "失物招领/寻物启事删除", menuname = "失物招领/寻物启事")
     public BaseResultDto deleteLostFound(String ids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int resultCode = platformLostFoundDao.deleteLostFound(ids.split(","));
@@ -226,7 +226,7 @@ public class PlatformLostFoundServiceImpl implements PlatformLostFoundService {
      * @return
      */
     @Override
-    @AopLog(description = "失物招领/寻物启事评论删除", menuname = "失物招领/寻物启事")
+    //@AopLog(description = "失物招领/寻物启事评论删除", menuname = "失物招领/寻物启事")
     public BaseResultDto deleteReview(String ids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int resultCode = platformLostFoundDao.deleteReview(ids.split(","));

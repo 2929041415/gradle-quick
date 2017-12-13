@@ -97,7 +97,7 @@ public class PlatFormFeedBackServiceImpl implements PlatFormFeedBackService {
      */
     @Override
     @Transactional
-    @AopLog(description = "新增意见", menuname = "意见反馈")
+    //@AopLog(description = "新增意见", menuname = "意见反馈")
     public BaseResultDto addFeedBack(Feedback feedBack, CommonsMultipartFile[] images) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //获取当前登录账号
@@ -215,7 +215,7 @@ public class PlatFormFeedBackServiceImpl implements PlatFormFeedBackService {
      * @return
      */
     @Override
-    @AopLog(description = "意见删除", menuname = "意见反馈")
+    //@AopLog(description = "意见删除", menuname = "意见反馈")
     public BaseResultDto deleteFeedBack(String ids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int resultCode = platformFeedBackDao.deleteFeedBack(ids.split(","));
@@ -236,7 +236,7 @@ public class PlatFormFeedBackServiceImpl implements PlatFormFeedBackService {
      * @return
      */
     @Override
-    @AopLog(description = "意见修改", menuname = "意见反馈")
+    //@AopLog(description = "意见修改", menuname = "意见反馈")
     public BaseResultDto updateStatus(Feedback feedBack) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int resultCode = platformFeedBackDao.updateStatus(feedBack);

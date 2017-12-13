@@ -65,6 +65,7 @@
 
     <!--文件服务-->
     <dubbo:service interface="com.combanc.service.helper.SambaService" ref="sambaService"/>
+    <dubbo:service interface="com.combanc.service.helper.SambaRpcService" ref="sambaRpcService"/>
 
     <!--缓存服务-->
     <dubbo:service interface="com.combanc.service.common.RedisClusterHelperApi" ref="redisClusterHelper"/>

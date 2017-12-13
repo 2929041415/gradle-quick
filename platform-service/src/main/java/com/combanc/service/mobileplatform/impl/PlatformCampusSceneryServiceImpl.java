@@ -109,7 +109,7 @@ public class PlatformCampusSceneryServiceImpl implements PlatformCampusScenerySe
      */
     @Override
     @Transactional
-    @AopLog(description = "校园风光新增", menuname = "校园风光")
+    //@AopLog(description = "校园风光新增", menuname = "校园风光")
     public BaseResultDto addCampusScenery(CampusScenery campusScenery, CommonsMultipartFile[] images) {
         BaseResultDto baseResultDto = new BaseResultDto();
 
@@ -194,7 +194,7 @@ public class PlatformCampusSceneryServiceImpl implements PlatformCampusScenerySe
      */
 
     @Override
-    @AopLog(description = "校园风光审核", menuname = "校园风光")
+    //@AopLog(description = "校园风光审核", menuname = "校园风光")
     public BaseResultDto approve(CampusScenery campusScenery) {
         BaseResultDto baseResultDto = new BaseResultDto();
         //用户标识
@@ -219,7 +219,7 @@ public class PlatformCampusSceneryServiceImpl implements PlatformCampusScenerySe
      * @return
      */
     @Override
-    @AopLog(description = "校园风光删除", menuname = "校园风光")
+    //@AopLog(description = "校园风光删除", menuname = "校园风光")
     public BaseResultDto delete(String ids) {
         BaseResultDto baseResultDto = new BaseResultDto();
         int result = platformCampusSceneryDao.delete(ids.split(","));

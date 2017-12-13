@@ -80,7 +80,7 @@ public class PlatFormUserRegisterServiceImpl implements PlatFormUserRegisterServ
      */
     @Override
     @Transactional
-    @AopLog(description = "添加开发者", menuname = "开发者管理")
+    //@AopLog(description = "添加开发者", menuname = "开发者管理")
     public BaseResultDto addUser(PlatFormUser platFormUser, CommonsMultipartFile idcardfile, CommonsMultipartFile leaderidcardfile, CommonsMultipartFile companycardfile) {
         BaseResultDto baseResultDto = new BaseResultDto();
         String userid = UidUtils.getId();
@@ -280,7 +280,7 @@ public class PlatFormUserRegisterServiceImpl implements PlatFormUserRegisterServ
      * @return
      */
     @Override
-    @AopLog(menuname = "开发者个人中心", description = "修改密码")
+    //@AopLog(menuname = "开发者个人中心", description = "修改密码")
     public BaseResultDto updatePassWord(String userid, String passwordOld, String passwordNew) {
         BaseResultDto baseResultDto = new BaseResultDto();
         PlatFormUser user = platFormUserRegisterDao.getUserByUserId(userid, CommonEnum.USER_TYPE.厂商用户.getValue());
@@ -340,7 +340,7 @@ public class PlatFormUserRegisterServiceImpl implements PlatFormUserRegisterServ
      * @return
      */
     @Override
-    @AopLog(menuname = "开发者个人中心", description = "快速注册第一步")
+    //@AopLog(menuname = "开发者个人中心", description = "快速注册第一步")
     public BaseResultDto registerStepOne(PlatFormUser platFormUser, HttpServletRequest request, String validateCode) {
         BaseResultDto baseResultDto = new BaseResultDto();
         HttpSession session = request.getSession();
@@ -389,7 +389,7 @@ public class PlatFormUserRegisterServiceImpl implements PlatFormUserRegisterServ
      * @return
      */
     @Override
-    @AopLog(menuname = "开发者个人中心", description = "快速注册第二步")
+    //@AopLog(menuname = "开发者个人中心", description = "快速注册第二步")
     public BaseResultDto registerStepTwo(HttpServletRequest request) {
         BaseResultDto baseResultDto = new BaseResultDto();
         String ticket = request.getParameter("ticket");

@@ -24,7 +24,7 @@ public class PlatFormApiServiceImpl implements PlatFormApiService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口类型管理", description = "添加接口类型")
+    //@AopLog(menuname = "接口类型管理", description = "添加接口类型")
     public BaseResultDto addApi(PlatFormApiType apiType) {
         BaseResultDto baseResultDto = new BaseResultDto();
         apiType.setId(UidUtils.getId());
@@ -46,7 +46,7 @@ public class PlatFormApiServiceImpl implements PlatFormApiService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口类型管理", description = "修改接口类型")
+    //@AopLog(menuname = "接口类型管理", description = "修改接口类型")
     public BaseResultDto editApi(PlatFormApiType apiType) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer count = platFormApiDao.editApi(apiType);
@@ -67,7 +67,7 @@ public class PlatFormApiServiceImpl implements PlatFormApiService {
      * @return
      */
     @Override
-    @AopLog(menuname = "接口类型管理", description = "删除接口类型")
+    //@AopLog(menuname = "接口类型管理", description = "删除接口类型")
     public BaseResultDto deleteApi(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer count = platFormApiDao.deleteApi(id);

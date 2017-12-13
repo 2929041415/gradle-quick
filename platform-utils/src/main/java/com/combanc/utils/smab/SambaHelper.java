@@ -223,6 +223,7 @@ public class SambaHelper {
 
     /**
      * 直接从文件服务器上查看---qxk
+     *
      * @param name
      * @param password
      * @param host
@@ -282,7 +283,59 @@ public class SambaHelper {
     }
 
     /**
+     * 直接从文件服务器上查看---qxk
+     *
+     * @param name
+     * @param password
+     * @param host
+     * @param source
+     * @throws Exception
+     */
+    public static InputStream downloadFileOutOpenInputStream(String name, String password, String host, String source)
+            throws Exception {
+        // 1入参检查
+        if ((host == null) || ("".equals(host.trim()))) {
+            throw new Exception("Samba服务器HOST不能为空!");
+        }
+        // 2入参检查
+        if ((source == null) || ("".equals(source.trim()))) {
+            throw new Exception("Samba服务器远程文件路径不可以为空");
+
+        }
+        // samba URL组合
+        StringBuffer urlBuffer = new StringBuffer();
+        // 转换源路径中的反斜杠
+        source = source.replaceAll("\\\\", "/");
+        // 判断是否为匿名访问
+        if (null != name && password != null && name.length() > 0) {
+            urlBuffer.append(" smb://");
+            urlBuffer.append(name);
+            urlBuffer.append(":");
+            urlBuffer.append(password);
+            urlBuffer.append("@");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(source);
+        } else {
+            urlBuffer.append("samba://");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(source);
+        }
+        System.out.println("SAMBA:" + urlBuffer.toString());
+
+        InputStream in = null;
+        // 创建一个smbFile对象对应远程服务器上的SmbFile
+        SmbFile remoteSmbFile = new SmbFile(urlBuffer.toString());
+        // 打开文件输入流，指向远程的smb服务器上的文件，特别注意，这里流包装器包装了SmbFileInputStream
+        in = new BufferedInputStream(new SmbFileInputStream(remoteSmbFile));
+
+        return in;
+    }
+
+    /**
      * 直接从文件服务器上下载附件---qxk
+     *
      * @param name
      * @param password
      * @param host
@@ -290,7 +343,7 @@ public class SambaHelper {
      * @param response
      * @throws Exception
      */
-    public static void downloadFileOut(String name, String password, String host, String source,String filename, HttpServletResponse response)
+    public static void downloadFileOut(String name, String password, String host, String source, String filename, HttpServletResponse response)
             throws Exception {
         // 1入参检查
         if ((host == null) || ("".equals(host.trim()))) {
@@ -330,7 +383,7 @@ public class SambaHelper {
         in = new BufferedInputStream(new SmbFileInputStream(remoteSmbFile));
 
         // 先去掉文件名称中的空格,然后转换编码格式为utf-8,保证不出现乱码,这个文件名称用于浏览器的下载框中自动显示的文件名
-        response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"),"iso8859-1"));
+        response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"), "iso8859-1"));
         response.addHeader("Content-Length", "" + remoteSmbFile.length());
         OutputStream out = new BufferedOutputStream(response.getOutputStream());
         response.setContentType("application/octet-stream");
@@ -343,6 +396,58 @@ public class SambaHelper {
         // 最后关闭流
         out.close();
         in.close();
+
+    }
+
+    /**
+     * 直接从文件服务器上下载附件---
+     *
+     * @param name
+     * @param password
+     * @param host
+     * @param source
+     * @throws Exception
+     */
+    public static InputStream downloadFileOutInputStream(String name, String password, String host, String source, String filename)
+            throws Exception {
+        // 1入参检查
+        if ((host == null) || ("".equals(host.trim()))) {
+            throw new Exception("Samba服务器HOST不能为空!");
+        }
+        // 2入参检查
+        if ((source == null) || ("".equals(source.trim()))) {
+            throw new Exception("Samba服务器远程文件路径不可以为空");
+
+        }
+        // samba URL组合
+        StringBuffer urlBuffer = new StringBuffer();
+        // 转换源路径中的反斜杠
+        source = source.replaceAll("\\\\", "/");
+        // 判断是否为匿名访问
+        if (null != name && password != null && name.length() > 0) {
+            urlBuffer.append(" smb://");
+            urlBuffer.append(name);
+            urlBuffer.append(":");
+            urlBuffer.append(password);
+            urlBuffer.append("@");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(source);
+        } else {
+            urlBuffer.append("samba://");
+            urlBuffer.append(host);
+            urlBuffer.append("/");
+            urlBuffer.append(source);
+        }
+        System.out.println("SAMBA:" + urlBuffer.toString());
+
+        InputStream in = null;
+        // 创建一个smbFile对象对应远程服务器上的SmbFile
+        SmbFile remoteSmbFile = new SmbFile(urlBuffer.toString());
+        // 打开文件输入流，指向远程的smb服务器上的文件，特别注意，这里流包装器包装了SmbFileInputStream
+        in = new BufferedInputStream(new SmbFileInputStream(remoteSmbFile));
+
+        return in;
 
     }
 

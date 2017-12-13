@@ -27,7 +27,7 @@ public class PlatFormChannelServiceImpl implements PlatFormChannelService {
      * @return
      */
     @Override
-    @AopLog(description = "添加栏目", menuname = "栏目管理")
+    //@AopLog(description = "添加栏目", menuname = "栏目管理")
     public BaseResultDto addChannel(PlatFormChannel platFormChannel) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormChannel.setId(UidUtils.getId());
@@ -49,7 +49,7 @@ public class PlatFormChannelServiceImpl implements PlatFormChannelService {
      * @return
      */
     @Override
-    @AopLog(description = "修改栏目", menuname = "栏目管理")
+    //@AopLog(description = "修改栏目", menuname = "栏目管理")
     public BaseResultDto editChannel(PlatFormChannel platFormChannel) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormChannelDao.editChannel(platFormChannel);
@@ -70,7 +70,7 @@ public class PlatFormChannelServiceImpl implements PlatFormChannelService {
      * @return
      */
     @Override
-    @AopLog(description = "删除栏目", menuname = "栏目管理")
+    //@AopLog(description = "删除栏目", menuname = "栏目管理")
     public BaseResultDto delChannel(PlatFormChannel platFormChannel) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormChannelDao.delChannel(platFormChannel);

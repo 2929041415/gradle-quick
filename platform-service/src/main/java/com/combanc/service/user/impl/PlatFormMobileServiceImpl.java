@@ -45,7 +45,7 @@ public class PlatFormMobileServiceImpl implements PlatFormMobileService {
 
     @Override
     @Transactional
-    @AopLog(description = "外放接口修改密码", menuname = "移动平台")
+    //@AopLog(description = "外放接口修改密码", menuname = "移动平台")
     public BaseResultDto updateUserPassword(String account, String passwordOld, String passwordNew) {
 
 

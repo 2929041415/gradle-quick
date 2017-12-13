@@ -187,7 +187,7 @@ public class PlatFormWebUserLoginServiceImpl implements PlatFormWebUserLoginServ
     }
 
     @Override
-    @AopLog(description = "开发者登出", menuname = "用户登出")
+    //@AopLog(description = "开发者登出", menuname = "用户登出")
     public BaseResultDto webUserLogout(HttpServletRequest request) {
         BaseResultDto baseResultDto = new BaseResultDto();
         String token = request.getHeader(CommonEnum.HEAD_PARAM.ACCOUNT.getValue());

@@ -26,7 +26,7 @@ public class PlatFormDictServiceImpl implements PlatFormDictService {
      * @return
      */
     @Override
-    @AopLog(menuname = "字典管理",description = "添加字典")
+    //@AopLog(menuname = "字典管理",description = "添加字典")
     public BaseResultDto addDict(PlatFormDict platFormDict) {
         BaseResultDto baseResultDto = new BaseResultDto();
         platFormDict.setId(UidUtils.getId());
@@ -55,7 +55,7 @@ public class PlatFormDictServiceImpl implements PlatFormDictService {
      * @return
      */
     @Override
-    @AopLog(menuname = "字典管理",description = "修改字典")
+    //@AopLog(menuname = "字典管理",description = "修改字典")
     public BaseResultDto editDict(PlatFormDict platFormDict) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer checked = this.checkedDictCode(platFormDict);
@@ -83,7 +83,7 @@ public class PlatFormDictServiceImpl implements PlatFormDictService {
      * @return
      */
     @Override
-    @AopLog(menuname = "字典管理",description = "删除字典")
+    //@AopLog(menuname = "字典管理",description = "删除字典")
     public BaseResultDto delDict(String id) {
         BaseResultDto baseResultDto = new BaseResultDto();
         Integer result = platFormDictDao.delDict(id);

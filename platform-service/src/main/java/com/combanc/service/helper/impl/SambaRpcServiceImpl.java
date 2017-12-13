@@ -2,19 +2,20 @@ package com.combanc.service.helper.impl;
 
 import com.combanc.entity.common.BaseResultDto;
 import com.combanc.entity.common.ResultMessage;
-import com.combanc.service.helper.SambaService;
-import com.combanc.utils.aoplog.AopLog;
+import com.combanc.service.helper.SambaRpcService;
 import com.combanc.utils.smab.SambaHelper;
 import com.combanc.utils.smab.SambaUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
-@Service(value = "sambaService")
-public class SambaServiceImpl implements SambaService {
+@Service(value = "sambaRpcService")
+public class SambaRpcServiceImpl implements SambaRpcService {
+
 
     @Value("${samba.username}")
     private String sambausername;
@@ -28,17 +29,9 @@ public class SambaServiceImpl implements SambaService {
     @Value("${samba.target}")
     private String sambatarget;
 
-
-    /**
-     * 上传文件到服务器
-     *
-     * @param filePath
-     * @param sourcePath
-     * @return
-     */
     @Override
-    //@AopLog(description = "上传文件到服务器", menuname = "文件上传")
-    public BaseResultDto uploadFile(String filePath, String sourcePath) {
+    public BaseResultDto uploadFileRpc(String filePath, String sourcePath) {
+
         BaseResultDto baseResultDto = new BaseResultDto();
         if (StringUtils.isNotBlank(filePath) && StringUtils.isNotBlank(sourcePath)) {
             try {
@@ -59,57 +52,37 @@ public class SambaServiceImpl implements SambaService {
     }
 
     @Override
-    public BaseResultDto getSambaFile(String filePath,String targetPath) {
-        try {
-            SambaUtils.download(sambausername, sambapassword, sambahost,sambatarget+filePath,targetPath);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public InputStream getSambaFileRpc(String filePath, String targetPath) {
         return null;
     }
 
-    /**
-     * 点击下载文件服务器附件
-     * @param filePath
-     * @param filename
-     * @param response
-     * @return
-     */
     @Override
-    public BaseResultDto getSambaFileOut(String filePath,String filename,HttpServletResponse response) {
+    public InputStream getSambaFileOutRpc(String filePath, String filename) {
+        InputStream inputStream = null;
         try {
-            SambaHelper.downloadFileOut(sambausername, sambapassword, sambahost,sambatarget+filePath,filename,response);
+            inputStream = SambaHelper.downloadFileOutInputStream(sambausername, sambapassword, sambahost, sambatarget + filePath, filename);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return inputStream;
     }
 
-    /**
-     * 直接查看文件服务器图片
-     * @param filePath
-     * @param response
-     * @return
-     */
     @Override
-    public BaseResultDto getSambaFileOutOpen(String filePath, HttpServletResponse response) {
+    public InputStream getSambaFileOutOpenRpc(String filePath) {
+        InputStream inputStream = null;
         try {
-            SambaHelper.downloadFileOutOpen(sambausername, sambapassword, sambahost,sambatarget+filePath,response);
+            inputStream = SambaHelper.downloadFileOutOpenInputStream(sambausername, sambapassword, sambahost, sambatarget + filePath);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return inputStream;
     }
-    /**
-     *
-     * @param remoteUrl
-     * @return
-     */
+
     @Override
-    public BaseResultDto showeImage(String remoteUrl){
+    public BaseResultDto showeImageRpc(String remoteUrl) {
         BaseResultDto baseResultDto = new BaseResultDto();
         try {
-            SambaUtils.showImage(sambausername, sambapassword, sambahost,sambatarget + remoteUrl);
+            SambaUtils.showImage(sambausername, sambapassword, sambahost, sambatarget + remoteUrl);
             baseResultDto.setMsg(ResultMessage.SUCCESS_CODE);
             baseResultDto.setCode(ResultMessage.SUCCESS_MESSAGE);
         } catch (Exception e) {
@@ -120,17 +93,9 @@ public class SambaServiceImpl implements SambaService {
         return baseResultDto;
     }
 
-    /**
-     * 查看应用图标
-     * @param webapppicsmall
-     * @param response
-     */
     @Override
-    public void showAppImage(byte[] webapppicsmall, HttpServletResponse response) {
-        try {
-            SambaUtils.showAppImage(webapppicsmall,response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public InputStream showAppImageRpc(byte[] webapppicsmall) {
+        InputStream in = new ByteArrayInputStream(webapppicsmall);
+        return in;
     }
 }

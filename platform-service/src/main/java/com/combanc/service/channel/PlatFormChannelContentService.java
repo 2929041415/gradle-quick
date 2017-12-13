@@ -1,10 +1,12 @@
 package com.combanc.service.channel;
 
 import com.combanc.entity.channel.PlatFormChannelContent;
+import com.combanc.entity.channel.PlatFormChannelFile;
 import com.combanc.entity.common.BaseResultDto;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public interface PlatFormChannelContentService {
 
@@ -18,5 +20,5 @@ public interface PlatFormChannelContentService {
 
     BaseResultDto getContentFileList(String id);
 
-    void getFileList(String id, HttpServletResponse response);
+    List<PlatFormChannelFile> getFileList(String id);
 }
