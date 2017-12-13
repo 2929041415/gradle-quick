@@ -40,6 +40,7 @@ subprojects {
         dubboversion = '2.5.7'
         zookeeperversion = '3.4.6'
         zkclientversion = '0.5'
+        hessionversion = "4.0.51"
     }
 
     repositories {
@@ -107,7 +108,8 @@ subprojects {
                 "jcifs:jcifs:$jcifsversion",
                 "com.alibaba:dubbo:$dubboversion",
                 "org.apache.zookeeper:zookeeper:$zookeeperversion",
-                "com.101tec:zkclient:$zkclientversion"
+                "com.101tec:zkclient:$zkclientversion",
+                "com.caucho:hessian:$hessionversion"
         )
 
         // 测试依赖
